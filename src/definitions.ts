@@ -1,3 +1,9 @@
+export interface CapacitorIntentOptions {
+  url?: string;
+  action?: string;
+}
+
 export interface CapacitorIntentPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+  pluginName: string;
+  startActivity(options: CapacitorIntentOptions): Promise<void>;
 }
