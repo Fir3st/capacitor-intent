@@ -11,6 +11,21 @@ npm install capacitor-intent
 npx cap sync
 ```
 
+## Usage
+
+```typescript
+import { ACTION_VIEW, CapacitorIntent } from 'capacitor-intent';
+
+await CapacitorIntent.startActivity({
+  action: ACTION_VIEW,
+  url: 'https://capacitorjs.com',
+});
+```
+
+## Upgrading from 0.x
+
+Version 1.0.0 requires Capacitor 8. If your app is still on Capacitor 3 or 4, stay on `capacitor-intent@0.0.2`.
+
 ## API
 
 <docgen-index>

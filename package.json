@@ -9,7 +9,8 @@
   "files": [
     "android/src/main/",
     "android/build.gradle",
-    "dist/"
+    "dist/",
+    "CHANGELOG.md"
   ],
   "author": "Vladimir Fojtik <vladimir@fojtik.dev>",
   "license": "MIT",
@@ -20,10 +21,13 @@
   "bugs": {
     "url": "https://github.com/Fir3st/capacitor-intent/issues"
   },
+  "homepage": "https://github.com/Fir3st/capacitor-intent#readme",
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "android",
+    "intent"
   ],
   "scripts": {
     "verify": "npm run verify:android && npm run verify:web",
