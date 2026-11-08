@@ -1,18 +1,18 @@
 package cz.firest.intent;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
+import android.util.Log;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
-import android.util.Log;
-import android.content.Intent;
-import android.net.Uri;
-import android.content.ActivityNotFoundException;
-
 @CapacitorPlugin(name = "CapacitorIntent")
 public class CapacitorIntentPlugin extends Plugin {
+
     public static final String LOG_TAG = "Intent";
 
     @PluginMethod
@@ -25,13 +25,13 @@ public class CapacitorIntentPlugin extends Plugin {
             final String url = data.has("url") ? data.getString("url") : "";
             final Intent intent = new Intent(action, Uri.parse(url));
             try {
-                this.startActivityForResult(call, intent, 1);
-                call.success();
+                getActivity().startActivity(intent);
+                call.resolve();
             } catch (ActivityNotFoundException activityError) {
-                call.error(activityError.getMessage());
+                call.reject(activityError.getMessage());
             }
         } else {
-            call.error("No action provided");
+            call.reject("No action provided");
         }
     }
 }

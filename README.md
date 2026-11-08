@@ -2,6 +2,8 @@
 
 Plugin for executing android intents from Capacitor app
 
+Requires Capacitor 8 or newer.
+
 ## Install
 
 ```bash
